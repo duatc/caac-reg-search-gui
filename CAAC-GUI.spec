@@ -5,17 +5,19 @@ block_cipher = None
 
 # 收集数据文件
 datas = []
-data_src = os.path.join(os.path.dirname(SPECPATH), "src", "data")
+root = os.path.dirname(SPECPATH)
+
+data_src = os.path.join(root, "data")
 if os.path.exists(data_src):
     datas.append((data_src, "data"))
 
-frontend_src = os.path.join(os.path.dirname(SPECPATH), "src", "frontend")
+frontend_src = os.path.join(root, "frontend")
 if os.path.exists(frontend_src):
     datas.append((frontend_src, "frontend"))
 
 a = Analysis(
     ["run_gui.py"],
-    pathex=[os.path.dirname(SPECPATH)],
+    pathex=[root],
     binaries=[],
     datas=datas,
     hiddenimports=["jieba", "rank_bm25", "PyQt5", "PyQt5.QtCore", "PyQt5.QtWidgets", "PyQt5.QtGui"],
@@ -51,6 +53,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=None,           # 可自行替换 icon.ico
-    version="version_info.txt",
+    icon=None,
 )

@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "宋体", "SimSun", "思源黑体", "Noto Sans SC", sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    color: #1a3a6b;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 14px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#searchInput {
+    flex: 1;
+    padding: 14px 18px;
+    font-size: 16px;
+    border: 2px solid #1a3a6b;
+    border-radius: 6px;
+    outline: none;
+    font-family: inherit;
+}
+
+#searchInput:focus {
+    border-color: #2a5ab8;
+    box-shadow: 0 0 0 3px rgba(26, 58, 107, 0.1);
+}
+
+#searchBtn {
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #1a3a6b;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.2s;
+}
+
+#searchBtn:hover {
+    background-color: #2a5ab8;
+}
+
+#searchBtn:disabled {
+    background-color: #8aa4c8;
+    cursor: not-allowed;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #1a3a6b;
+    font-size: 16px;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.result-card {
+    background: #fff;
+    border: 1px solid #d4e4f7;
+    border-radius: 8px;
+    padding: 20px;
+    transition: box-shadow 0.2s;
+}
+
+.result-card:hover {
+    box-shadow: 0 4px 12px rgba(26, 58, 107, 0.12);
+}
+
+.result-title {
+    color: #1a3a6b;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.result-snippet {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 12px;
+    line-height: 1.8;
+}
+
+.view-source {
+    display: inline-block;
+    color: #1a3a6b;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.view-source:hover {
+    text-decoration: underline;
+}
+
+.no-results,
+.error {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 16px;
+}
+
+.error {
+    color: #c0392b;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 10px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    #searchBtn {
+        width: 100%;
+    }
+
+    .result-card {
+        padding: 14px;
+    }
+
+    .result-title {
+        font-size: 16px;
+    }
+}
